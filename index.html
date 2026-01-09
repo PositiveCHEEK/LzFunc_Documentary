@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LzFunc Documentation - 0.1.2</title>
   </head>
   <body>
     <h1>LzFunc - Less Boilerplate</h1>
@@ -10,93 +11,95 @@
     <details>
       <summary>Downloading LzFunc</summary>
       <div class="funccontent">
-        <p>The process is very simple: You just have to enter this line in the Console with PIP installed:</p>
+        <p>The process is simple. You just have to enter this line in the console with "pip" installed:</p>
         <div class="codecontent">pip install LzFunc</div>
-        <p>And then open your .py file and type in this line that will import all of the functions from the module:</p>
+        <p>Then you can open your .py file and import all of the functions from the module by your preferred choice, e.g.:</p>
         <div class="codecontent">from LzFunc import *</div>
         <p>By doing these steps, you'll be able to use all <i>
             <strong>LzFunctions</strong>
-          </i> in your algorithm. By the way, you can check out a built-in documentation by typing this line: </p>
-        <div class="codecontent">help(core)</div>
+          </i> in your algorithm. You can also check out a built-in documentation by typing this line: </p>
+        <div class="codecontent">help(core)</div></div>
     </details>
     <details>
       <summary>nl()</summary>
       <div class="funccontent">
-        <p>Skips a line in the output. Good for utilities and text games.</p>
+        <p>Skips a line in the output. The argument determines how many lines should be skipped.</p>
         <div class="codecontent">print("Hello") <br>nl(2) <br>print("World") </div>
-        <div class="codecontent">> Hello <br>> <br>> <br>> World </div>
+        <div class="codecontent">&gt; Hello <br>&gt;<br>&gt;<br>&gt; World </div>
       </div>
     </details>
     <details>
       <summary>pause()</summary>
       <div class="funccontent">
-        <p>Waits an interval with a three-dot animation. Can also be used in some utilities in a fake download or as a visual effect.</p>
+        <p>Waits an interval with a three-dot animation. The argument determines how many seconds should be awaited before continuing. <!-- Hey, developer, make async version of pause()! --> Might be used as a fake loading or as a visual effect.</p>
         <div class="codecontent">print("Hello") <br>pause(3) <br>print("World") </div>
-        <div class="codecontent" style="white-space: pre">> Hello <span class="dots"></span>
+        <div class="codecontent" style="white-space: pre">&gt; Hello <span class="dots"></span>
         </div>
       </div>
     </details>
     <details>
       <summary>input_yesno()</summary>
       <div class="funccontent">
-        <p>Makes simple "Yes or No" question, that returns complete boolean answer to the variable. (Has different yes or no answers: yes, y, ofc, of course, duh, yeah, yea, no, n, nah, naw, nuh uh).</p>
-        <div class="codecontent">answer = input_yesno("Do you like dancing? ") <br>if answer == True: <br>    print("I like trains.") <br>if answer == False: <br>    print("I like singing!") </div>
-        <div class="codecontent">> Do you like dancing? Yes <br>> I like trains. </div>
-      </div>
+        <p>Makes simple "Yes or No" question that returns boolean depending on user's answer. The string argument determines question asked to the user. (Has pre-defined yes or no answers: yes, y, ofc, of course, duh, yeah, yea, no, n, nah, naw, nuh uh).</p>
+        <div class="codecontent">answer = input_yesno("Do you like dancing? ") <br>if answer == True: <br>    print("I like dancing too!") <br>else: <br>    print("Too bad.") </div>
+        <div class="codecontent">&gt; Do you like dancing? Yes <br>&gt; Too bad. </div>
+      </div> <!-- The previous example was stupid --> 
     </details>
     <details>
       <summary>input_default()</summary>
       <div class="funccontent">
-        <p>Returns Default value on [ENTER].</p>
+        <p>Makes simple question that returns either user value or default value if the first one was empty string. First string argument determines question asked to the user. The second one determines default answer.</p>
         <div class="codecontent">name = input_default("What is your name? (Anonym by Default) ", "Anonym") <br>print(name) </div>
-        <div class="codecontent">> What is your name? (Anonym by Default) [ENTER] <br>> Anonym </div>
+        <div class="codecontent">&gt; What is your name? (Anonym by Default) [ENTER] <br>&gt; Anonym </div>
       </div>
     </details>
     <details>
       <summary>invert()</summary>
       <div class="funccontent">
-        <p>Simple switch to invert the variable. <br>
-          <span style="font-size: 7px">* No way it's simple, I spent half an hour to make this function.</span>
+        <p>Simple switch to invert any variable. Argument is the variable that supports inversion. The supported variable types are as follows: bool, int, str, list, None and "All".<br>
+          <span style="font-size: 9px">* No way it's simple, I spent half an hour to make this function.</span>
         </p>
-        <div class="codecontent">switchstate = True <br>
-          <br>if switchstate == True: <br>    turn = input_yesno("Turn off the switch? ") <br>if turn == False: <br>    None <br>if turn == True: <br>    switchstate = invert(switchstate) <br>print("Current switch state:", switchstate)
+        <div class="codecontent">switchstate = int(input("Enter number: ")) <br> turn = false 
+            <br>
+            <br>if number > 0: <br>    turn = input_yesno("Invert the number? ") <br>if turn: <br>    number = invert(number) <br>print("Current number:", number)
         </div>
-        <div class="codecontent">> Turn off the switch? Yes <br>> Current switch state: False </div>
+        <div class="codecontent">&gt; Enter number: 6 <br>&gt; Invert number? Yes <br>&gt; Current number: -6 </div>
       </div>
     </details>
     <details>
       <summary>clear()</summary>
       <div class="funccontent">
-        <p>Clears the terminal. Has Linux and Windows support.</p>
+        <p>Cross-platform terminal clear for Linux and Windows. Doesn't have arguments.</p>
         <div class="codecontent">print("ABC") <br>clear() </div>
-        <div class="codecontent">></div>
+        <div class="codecontent">&gt;</div>
       </div>
     </details>
     <details>
       <summary>dictind()</summary>
       <div class="funccontent">
+        <div class="deprecation-message">dictind() is deprecated and shouldn't be used. It will be deleted in the next update.</div>
         <p>Returns value from a dictionary. Supports keys, values, items.</p>
         <div class="codecontent">shoplist = {"fruits":"apple","vegetables":["carrot","potato"]} <br>print(dictind(shoplist, 2, "value", 1)) </div>
-        <div class="codecontent">> potato</div>
+        <div class="codecontent">&gt; potato</div>
       </div>
     </details>
     <details>
       <summary>isit()</summary>
       <div class="funccontent">
-        <p>Returns Boolean based on the selected variable type check. Supports Natural, Whole, Palindrome. Long story short:</p>
+        <p>Checks numbers based on the selected mode. The first argument is a variable, supported types depend on mode. The second argument is mode, represented as string <!-- make fucking enums, developass -->and supports "Natural", "Whole" and "Palindrome" modes. Integer argument is supported for all modes, string is supported only for "Palindrome" mode.</p>
         <div class="codecontent">pal = 1225221 <br>print(isit(pal, "palindrome")) </div>
-        <div class="codecontent">> True</div>
+        <div class="codecontent">&gt; True</div>
       </div>
     </details>
     <details>
       <summary>listop()</summary>
       <div class="funccontent">
-        <p>Does an operation with two lists.</p>
-        <div class="codecontent">pos = [0,0] <br>dpos = [-1,1] <br>pos = listop(dpos,pos,"+") <br>print(pos) </div>
-        <div class="codecontent">> [-1,1]</div>
+        <p>Does an operation with two lists. The first and second arguments are lists. The third one is the operation, represented by string. Supported operations are plus and minus.</p>
+        <div class="codecontent">pos = [3,4] <br>dpos = [-1,1] <br>pos = listop(dpos,pos,"+") <br>print(pos) </div>
+        <div class="codecontent">&gt; [2, 5]</div>
       </div>
     </details>
-    <p style="color: black; background-color: #FDFAA5; margin: 3px; width: 80px; height: 5px; font-size: 13px; padding: 10px; padding-bottom: 20px; transform: rotate(-15deg); margin-top: 15px">Version: 0.1.2</p>
+    <p style="color: black; background-color: #FDFAA5; margin: 3px; width: 35px; height: 5px; font-size: 16px; padding: 10px; padding-bottom: 20px; transform: rotate(-15deg); margin-top: 15px">0.1.2</p>
     <div style="background-color: #FDFAA5; color: black; font-size: 13px; padding: 10px; font-family: Arial; margin-top: 1000px; margin-bottom: 20px; width: 500px">
       <span style="font-family: 'sans-serif'; font-weight: bold; font-size: 20px">What is this?</span>
       <br>This is a LzFunc's Extra class for the invert() function! It was meant to be the opposite side for the <span style="font-family:'Courier New',monospace">None</span>, because if the opposite would be anything else, it would look like a bit off. <br>
@@ -139,6 +142,14 @@
       summary:hover {
         color: lightgrey;
         background-color: #7D8F73
+      }
+
+      .deprecation-message {
+          color: white;
+          background-color: black;
+          font-style: italic;
+          margin: 5px;
+          padding: 10px
       }
 
       .funccontent {
