@@ -1,108 +1,228 @@
 <!DOCTYPE html>
 <html>
-	<head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
-	<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LzFunc Documentation - 0.1.2</title>
+  </head>
+  <body>
+    <h1>LzFunc - Less Boilerplate</h1>
+    <p>This is a documentation to a Python module called "LzFunc". The module includes some functions that can simplify the code and reduce the "boilerplate", so the programmer doesn't have to grind down his fingers to write 5 more characters.</p>
+    <p style="margin-bottom: 10px">There is a full documentation for all the functions LzFunc that includes:</p>
+    <details>
+      <summary>Downloading LzFunc</summary>
+      <div class="funccontent">
+        <p>The process is simple. You just have to enter this line in the console with "pip" installed:</p>
+        <div class="codecontent">pip install LzFunc</div>
+        <p>Then you can open your .py file and import all of the functions from the module by your preferred choice, e.g.:</p>
+        <div class="codecontent">from LzFunc import *</div>
+        <p>By doing these steps, you'll be able to use all <i>
+            <strong>LzFunctions</strong>
+          </i> in your algorithm. You can also check out a built-in documentation by typing this line: </p>
+        <div class="codecontent">help(core)</div></div>
+    </details>
+    <details>
+      <summary>nl()</summary>
+      <div class="funccontent">
+        <p>Skips a line in the output. The argument determines how many lines should be skipped.</p>
+        <div class="codecontent">print("Hello") <br>nl(2) <br>print("World") </div>
+        <div class="codecontent">&gt; Hello <br>&gt;<br>&gt;<br>&gt; World </div>
+      </div>
+    </details>
+    <details>
+      <summary>pause()</summary>
+      <div class="funccontent">
+        <p>Waits an interval with a three-dot animation. The argument determines how many seconds should be awaited before continuing. <!-- Hey, developer, make async version of pause()! --> Might be used as a fake loading or as a visual effect.</p>
+        <div class="codecontent">print("Hello") <br>pause(3) <br>print("World") </div>
+        <div class="codecontent" style="white-space: pre">&gt; Hello <span class="dots"></span>
+        </div>
+      </div>
+    </details>
+    <details>
+      <summary>input_yesno()</summary>
+      <div class="funccontent">
+        <p>Makes simple "Yes or No" question that returns boolean depending on user's answer. The string argument determines question asked to the user. (Has pre-defined yes or no answers: yes, y, ofc, of course, duh, yeah, yea, no, n, nah, naw, nuh uh).</p>
+        <div class="codecontent">answer = input_yesno("Do you like dancing? ") <br>if answer == True: <br>    print("I like dancing too!") <br>else: <br>    print("Too bad.") </div>
+        <div class="codecontent">&gt; Do you like dancing? Yes <br>&gt; I like dancing too! </div>
+      </div> <!-- The previous example was stupid --> 
+    </details>
+    <details>
+      <summary>input_default()</summary>
+      <div class="funccontent">
+        <p>Makes simple question that returns either user value or default value if the first one was empty string. First string argument determines question asked to the user. The second one determines default answer.</p>
+        <div class="codecontent">name = input_default("What is your name? (Anonym by Default) ", "Anonym") <br>print(name) </div>
+        <div class="codecontent">&gt; What is your name? (Anonym by Default) [ENTER] <br>&gt; Anonym </div>
+      </div>
+    </details>
+    <details>
+      <summary>invert()</summary>
+      <div class="funccontent">
+        <p>Simple switch to invert any variable. Argument is the variable that supports inversion. The supported variable types are as follows: bool, int, str, list, None and "All".<br>
+          <span style="font-size: 9px">* No way it's simple, I spent half an hour to make this function.</span>
+        </p>
+        <div class="codecontent">number = int(input("Enter number: ")) <br> turn = false 
+            <br>
+            <br>if number > 0: <br>    turn = input_yesno("Invert the number? ") <br>if turn: <br>    number = invert(number) <br>print("Current number:", number)
+        </div>
+        <div class="codecontent">&gt; Enter number: 6 <br>&gt; Invert number? Yes <br>&gt; Current number: -6 </div>
+      </div>
+    </details>
+    <details>
+      <summary>clear()</summary>
+      <div class="funccontent">
+        <p>Cross-platform terminal clear for Linux and Windows. Doesn't have arguments.</p>
+        <div class="codecontent">print("ABC") <br>clear() </div>
+        <div class="codecontent">&gt;</div>
+      </div>
+    </details>
+    <details>
+      <summary>dictind()</summary>
+      <div class="funccontent">
+        <div class="deprecation-message">dictind() is deprecated and shouldn't be used. It will be deleted in the next update.</div>
+        <p>Returns value from a dictionary. Supports keys, values, items.</p>
+        <div class="codecontent">shoplist = {"fruits":"apple","vegetables":["carrot","potato"]} <br>print(dictind(shoplist, 2, "value", 1)) </div>
+        <div class="codecontent">&gt; potato</div>
+      </div>
+    </details>
+    <details>
+      <summary>isit()</summary>
+      <div class="funccontent">
+        <p>Checks numbers based on the selected mode. The first argument is a variable, supported types depend on mode. The second argument is mode, represented as string <!-- make fucking enums, developass -->and supports "Natural", "Whole" and "Palindrome" modes. Integer argument is supported for all modes, string is supported only for "Palindrome" mode.</p>
+        <div class="codecontent">pal = 1225221 <br>print(isit(pal, "palindrome")) </div>
+        <div class="codecontent">&gt; True</div>
+      </div>
+    </details>
+    <details>
+      <summary>listop()</summary>
+      <div class="funccontent">
+        <p>Does an operation with two lists. The first and second arguments are lists. The third one is the operation, represented by string. Supported operations are plus and minus.</p>
+        <div class="codecontent">pos = [3,4] <br>dpos = [-1,1] <br>pos = listop(dpos,pos,"+") <br>print(pos) </div>
+        <div class="codecontent">&gt; [2, 5]</div>
+      </div>
+    </details>
+    <p style="color: black; background-color: #FDFAA5; margin: 3px; width: 35px; height: 5px; font-size: 16px; padding: 10px; padding-bottom: 20px; transform: rotate(-15deg); margin-top: 15px">0.1.2</p>
+    <div style="background-color: #FDFAA5; color: black; font-size: 13px; padding: 10px; font-family: Arial; margin-top: 1000px; margin-bottom: 20px; width: 500px">
+      <span style="font-family: 'sans-serif'; font-weight: bold; font-size: 20px">What is this?</span>
+      <br>This is a LzFunc's Extra class for the invert() function! It was meant to be the opposite side for the <span style="font-family:'Courier New',monospace">None</span>, because if the opposite would be anything else, it would look like a bit off. <br>
+      <br>The <span style="font-family: 'sans-serif'; font-weight: bold; font-size: 20px">All</span> itself isn't very functional, it will raise "NonSpecificError" if you'll try to call it, but if you SPECIFY it, you can actually... use it? Not that it has something special, if you try to call it using All("a"), it will be just "a" and nothing else.
+    </div>
+    <button class="theall" onclick="alert('LzFunc.core.NonSpecificError: Can\'t call non-specified order from All')">All</button>
+    <style>
+      body {
+        font-family: Arial;
+        background-color: #D8EDAD
+      }
 
-		<h1>LzFunc - Less Boilerplate</h1>
-        <p>This is a documentation to a Python module called "LzFunc". The module includes some functions that can simplify the code and reduce the "boilerplate", so the programmer doesn't have to grind down his fingers to write 5 more characters.</p>
-        <p style="margin-bottom: 10px">There is a full documentation for all the functions LzFunc that includes:</p>
-        
-        <details>
-        	<summary>Downloading LzFunc</summary>
-            <div class="funccontent"><p>The process is very simple: You just have to enter this line in the Console with PIP installed:</p><div class="codecontent">pip install LzFunc</div><p>And then open your .py file and type in this line that will import all of the functions from the module:</p><div class="codecontent">from LzFunc import *</div><p>By doing these steps, you'll be able to use all <i><strong>LzFunctions</strong></i> in your algorithm. By the way, you can check out a built-in documentation by typing this line:</p><div class="codecontent">help(core)</div>
-        </details>
-        
-        <details>
-        	<summary>nl()</summary>
-            <div class="funccontent"><p>Skips a line in the output. Good for utilities and text games.</p><div class="codecontent">print("Hello")<br>nl(2)<br>print("World")</div><div class="codecontent">> Hello<br>><br>><br>> World</div></div>
-        </details>
-        
-        <details>
-        	<summary>pause()</summary>
-            <div class="funccontent"><p>Waits an interval with a three-dot animation. Can also be used in some utilities in a fake download or as a visual effect.</p><div class="codecontent">print("Hello")<br>pause(3)<br>print("World")</div><div class="codecontent" style="white-space: pre">> Hello<span class="dots"></span></div></div>
-        </details>
-        
-        <details>
-        	<summary>input_yesno()</summary>
-            <div class="funccontent"><p>Makes simple "Yes or No" question, that returns complete boolean answer to the variable. (Has different yes or no answers: yes, y, ofc, of course, duh, yeah, yea, no, n, nah, naw, nuh uh).</p><div class="codecontent">answer = input_yesno("Do you like dancing? ")<br>if answer == True:<br>    print("I like trains.")<br>if answer == False:<br>    print("I like singing!")</div><div class="codecontent">> Do you like dancing? Yes<br>> I like trains.</div></div>
-        </details>
-        
-        <details>
-        	<summary>input_default()</summary>
-            <div class="funccontent"><p>Returns Default value on [ENTER].</p><div class="codecontent">name = input_default("What is your name? (Anonym by Default) ", "Anonym")<br>print(name)</div><div class="codecontent">> What is your name? (Anonym by Default) [ENTER]<br>> Anonym</div></div>
-        </details>
-        
-        <details>
-        	<summary>invert()</summary>
-            <div class="funccontent"><p>Simple switch to invert the variable.<br><span style="font-size: 7px">* No way it's simple, I spent half an hour to make this function.</span></p><div class="codecontent">switchstate = True<br><br>if switchstate == True:<br>    turn = input_yesno("Turn off the switch? ")<br>if turn == False:<br>    None<br>if turn == True:<br>    switchstate = invert(switchstate)<br>print("Current switch state:", switchstate)</div><div class="codecontent">> Turn off the switch? Yes<br>> Current switch state: False</div></div>
-        </details>
-        
-        <details>
-        	<summary>clear()</summary>
-            <div class="funccontent"><p>Clears the terminal. Has Linux and Windows support.</p><div class="codecontent">print("ABC")<br>clear()</div><div class="codecontent">> </div></div>
-        </details>
-        
-        <details>
-        	<summary>dictind()</summary>
-            <div class="funccontent"><p>Returns value from a dictionary. Supports keys, values, items.</p><div class="codecontent">shoplist = {"fruits":"apple","vegetables":["carrot","potato"]}<br>print(dictind(shoplist, 2, "value", 1))</div><div class="codecontent">> potato</div></div>
-        </details>
-        
-        <details>
-        	<summary>isit()</summary>
-            <div class="funccontent"><p>Returns Boolean based on the selected variable type check. Supports Natural, Whole, Palindrome. Long story short:</p><div class="codecontent">pal = 1225221<br>print(isit(pal, "palindrome"))</div><div class="codecontent">> True</div></div>
-        </details>
-        
-        <details>
-        	<summary>listop()</summary>
-            <div class="funccontent"><p>Does an operation with two lists.</p><div class="codecontent">pos = [0,0]<br>dpos = [-1,1]<br>pos = listop(dpos,pos,"+")<br>print(pos)</div><div class="codecontent">> [-1,1]</div></div>
-        </details>
-        
-        <p style="color: black; background-color: #FDFAA5; margin: 3px; width: 80px; height: 5px; font-size: 13px; padding: 10px; padding-bottom: 20px; transform: rotate(-15deg); margin-top: 15px">Version: 0.1.2</p>
-        
-		<div style="background-color: #FDFAA5; color: black; font-size: 13px; padding: 10px; font-family: Arial; margin-top: 1000px; margin-bottom: 20px; width: 500px"><span style="font-family: 'sans-serif'; font-weight: bold; font-size: 20px">What is this?</span><br>This is a LzFunc's Extra class for the invert() function! It was meant to be the opposite side for the <span style="font-family:'Courier New',monospace">None</span>, because if the opposite would be anything else, it would look like a bit off.<br><br>The <span style="font-family: 'sans-serif'; font-weight: bold; font-size: 20px">All</span> itself isn't very functional, it will raise "NonSpecificError" if you'll try to call it, but if you SPECIFY it, you can actually... use it? Not that it has something special, if you try to call it using All("a"), it will be just "a" and nothing else.</div>
-        
-        <button class="theall" onclick="alert('LzFunc.core.NonSpecificError: Can\'t call non-specified order from All')">All</button>
-        
-        <style>
-        	body {font-family: Arial; background-color: #D8EDAD}
-            h1 {color: white; background-color: #B1D199; margin: 5px; padding: 15px; text-align: center; margin-bottom: 10px}
-            p {color: white; background-color: #93C493; margin: 5px; padding: 20px}
-            summary {color: white; background-color: #90AD82; border: None; margin: 5px; padding: 5px; cursor: pointer; text-align: left; user-select: none}
-            summary:hover {color: lightgrey; background-color: #7D8F73}
-            .funccontent {color: white; background-color: #7D8F73; margin: 5px; padding: 2px 2px 2px 2px}
-            .codecontent {color: white; font-family: 'Courier New', monospace; background-color: black; border-radius: 5px; padding: 10px; margin: 10px}
-            
-  		    .dots::after {
-			content: '.\A ';
-      	    animation: dots 3s steps(4, end) infinite;
-    		}
-    
-    		@keyframes dots {
-     		    0% {content: ".\A ";}
-      		    25% {content: "..\A ";}
-      		    50% {content: "...\A ";}
-                75% {content: "...\A> World";}
-   		    }
-            
-            .theall {color: white; border-radius: 50%; margin: 0 auto; width: 400px; height: 400px; align-items: center; justify-content: center; cursor: grabbing; display: flex; background: hsla(0, 100%, 40%, 1);
+      h1 {
+        color: white;
+        background-color: #B1D199;
+        margin: 5px;
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 10px
+      }
 
-background: radial-gradient(circle, hsla(0, 100%, 40%, 1) 19%, hsla(0, 100%, 41%, 1) 38%, hsla(0, 100%, 45%, 1) 49%, hsla(0, 0%, 0%, 1) 54%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+      p {
+        color: white;
+        background-color: #93C493;
+        margin: 5px;
+        padding: 20px
+      }
 
-background: -moz-radial-gradient(circle, hsla(0, 100%, 40%, 1) 19%, hsla(0, 100%, 41%, 1) 38%, hsla(0, 100%, 45%, 1) 49%, hsla(0, 0%, 0%, 1) 54%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+      summary {
+        color: white;
+        background-color: #90AD82;
+        border: None;
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+        text-align: left;
+        user-select: none
+      }
 
-background: -webkit-radial-gradient(circle, hsla(0, 100%, 40%, 1) 19%, hsla(0, 100%, 41%, 1) 38%, hsla(0, 100%, 45%, 1) 49%, hsla(0, 0%, 0%, 1) 54%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+      summary:hover {
+        color: lightgrey;
+        background-color: #7D8F73
+      }
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#CA0000", endColorstr="#D10000", GradientType=1 ); border: 0; font-size: 100px; font-family: "sans-serif"; font-weight: bold}
-			.theall:active {cursor: grab; background: hsla(0, 100%, 15%, 1);
+      .deprecation-message {
+          color: white;
+          background-color: black;
+          font-style: italic;
+          margin: 5px;
+          padding: 10px
+      }
 
-background: radial-gradient(circle, hsla(0, 100%, 15%, 1) 23%, hsla(0, 100%, 20%, 1) 37%, hsla(0, 100%, 22%, 1) 45%, hsla(0, 0%, 0%, 1) 52%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+      .funccontent {
+        color: white;
+        background-color: #7D8F73;
+        margin: 5px;
+        padding: 2px 2px 2px 2px
+      }
 
-background: -moz-radial-gradient(circle, hsla(0, 100%, 15%, 1) 23%, hsla(0, 100%, 20%, 1) 37%, hsla(0, 100%, 22%, 1) 45%, hsla(0, 0%, 0%, 1) 52%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+      .codecontent {
+        color: white;
+        font-family: 'Courier New', monospace;
+        background-color: black;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px
+      }
 
-background: -webkit-radial-gradient(circle, hsla(0, 100%, 15%, 1) 23%, hsla(0, 100%, 20%, 1) 37%, hsla(0, 100%, 22%, 1) 45%, hsla(0, 0%, 0%, 1) 52%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+      .dots::after {
+        content: '.\A ';
+        animation: dots 3s steps(4, end) infinite;
+      }
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#4D0000", endColorstr="#680000", GradientType=1 ); color: grey; font-size: 93px}
-        </style>
-	</body>
+      @keyframes dots {
+        0% {
+          content: ".\A ";
+        }
+
+        25% {
+          content: "..\A ";
+        }
+
+        50% {
+          content: "...\A ";
+        }
+
+        75% {
+          content: "...\A> World";
+        }
+      }
+
+      .theall {
+        color: white;
+        border-radius: 50%;
+        margin: 0 auto;
+        width: 400px;
+        height: 400px;
+        align-items: center;
+        justify-content: center;
+        cursor: grabbing;
+        display: flex;
+        background: hsla(0, 100%, 40%, 1);
+        background: radial-gradient(circle, hsla(0, 100%, 40%, 1) 19%, hsla(0, 100%, 41%, 1) 38%, hsla(0, 100%, 45%, 1) 49%, hsla(0, 0%, 0%, 1) 54%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+        background: -moz-radial-gradient(circle, hsla(0, 100%, 40%, 1) 19%, hsla(0, 100%, 41%, 1) 38%, hsla(0, 100%, 45%, 1) 49%, hsla(0, 0%, 0%, 1) 54%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+        background: -webkit-radial-gradient(circle, hsla(0, 100%, 40%, 1) 19%, hsla(0, 100%, 41%, 1) 38%, hsla(0, 100%, 45%, 1) 49%, hsla(0, 0%, 0%, 1) 54%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#CA0000", endColorstr="#D10000", GradientType=1);
+        border: 0;
+        font-size: 100px;
+        font-family: "sans-serif";
+        font-weight: bold
+      }
+
+      .theall:active {
+        cursor: grab;
+        background: hsla(0, 100%, 15%, 1);
+        background: radial-gradient(circle, hsla(0, 100%, 15%, 1) 23%, hsla(0, 100%, 20%, 1) 37%, hsla(0, 100%, 22%, 1) 45%, hsla(0, 0%, 0%, 1) 52%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+        background: -moz-radial-gradient(circle, hsla(0, 100%, 15%, 1) 23%, hsla(0, 100%, 20%, 1) 37%, hsla(0, 100%, 22%, 1) 45%, hsla(0, 0%, 0%, 1) 52%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+        background: -webkit-radial-gradient(circle, hsla(0, 100%, 15%, 1) 23%, hsla(0, 100%, 20%, 1) 37%, hsla(0, 100%, 22%, 1) 45%, hsla(0, 0%, 0%, 1) 52%, hsla(0, 96%, 50%, 1) 64%, hsla(0, 71%, 30%, 1) 75%, hsla(0, 0%, 0%, 1) 75%);
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#4D0000", endColorstr="#680000", GradientType=1);
+        color: grey;
+        font-size: 93px
+      }
+    </style>
+  </body>
 </html>
 
